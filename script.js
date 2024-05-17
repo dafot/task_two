@@ -1,20 +1,5 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", () => {
-  let formData = {};
-  const LS = localStorage;
 
-  form.addEventListener("input", (event) => {
-    formData[event.target.name] = event.target.value;
-    LS.setItem("formData", JSON.stringify(formData));
-  });
-
-  if (LS.getItem("formData")) {
-    formData = JSON.parse(LS.getItem("formData"));
-    for (let key in formData) {
-      form.elements[key].value = formData[key];
-    }
-  }
-});
 function validation(form) {
   function removeError(input) {
     const parent = input.parentNode;
@@ -40,7 +25,7 @@ function validation(form) {
     removeError(input);
 
     if (input.dataset.governum == "true") {
-      const regex = /^[а-яА-Я][0-9]{3}[а-яА-Я]{3} [0-9]{2}/;
+      const regex = /^[а-яА-Я][0-9]{3}[а-яА-Я]{3}[0-9]{2}/;
       if (!regex.test(input.value)) {
         removeError(input);
         createError(input, "Гос номер введен некорректно");
@@ -91,6 +76,33 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
     if (validation(this) == true) {
-      this.submit()
+      this.submit();
     }
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  let formData = {};
+  const form = document.querySelector(".form");
+  const LS = localStorage;
+
+  form.addEventListener("input", function (event) {
+    formData[event.target.name] = event.target.value;
+    LS.setItem("formData", JSON.stringify(formData));
+  });
+
+  if (LS.getItem("formData")) {
+    if (LS.getItem("formData")) {
+      formData = JSON.parse(LS.getItem("formData"));
+      console.log(formData);
+      // Проверяем, что у всех элементов формы есть атрибут name
+      Object.keys(formData).forEach((key) => {
+        const element = form.elements[key];
+        if (element) {
+          element.value = formData[key];
+        } else {
+          console.error(`Элемент с именем ${key} не найден в форме.`);
+        }
+      });
+    }
+  }
+});

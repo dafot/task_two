@@ -120,7 +120,7 @@ input{
 }
 @media (max-width: 992px) {
   .form {
-    width: auto;    
+    width: 100%;    
   }
   .form__col {
     align-self: self-start;
