@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>task two</title>
+  </head>
+  <body>
+    <form class="form" id="add-form" action="">
+      <div class="form__vehicle-info form__col">
+        <h1 class="form__main-title">Транспортные средства и водители</h1>
+        <div class="form__box">
+          <label class="form__box-label" for="">Гос. номер</label>
+          <input
+            data-required="true"
+            data-governum="true"
+            type="text"
+            class="form__field"
+            placeholder="Укажите го-номер"
+          />
+        </div>
+        <div class="form__box">
+          <label class="form__box-label" class="form__box-label" for=""
+            >Транспортное средство</label
+          >
+          <input
+            data-required="true"
+            type="text"
+            class="form__field"
+            placeholder="Транспортное средство"
+          />
+        </div>
+        <div class="form__box">
+          <label class="form__box-label" for=""
+            >Ориентировочная дата прибытия к покупателю</label
+          >
+          <input
+            data-current-date="true"
+            data-required="true"
+            type="text"
+            onfocus="this.type='date'"
+            onblur="this.type='text'"
+            class="form__field"
+            placeholder="*Дата"
+          />
+        </div>
+      </div>
+      <div class="form__driver-info form__col">
+        <h2 class="form__title">Данные о водителе</h2>
+        <div class="form__box">
+          <label class="form__box-label" for="">ФИО</label>
+          <input
+            data-required="true"
+            type="text"
+            class="form__field"
+            placeholder="ФИО"
+          />
+        </div>
+        <div class="form__box-wrap">
+          <label class="form__box-label" for="">Паспортные данные</label>
+          <div class="form__field-wrap">
+            <div class="form__box">
+              <input
+                data-required="true"
+                data-series="true"
+                type="text"
+                class="form__field"
+                placeholder="Серия"
+              />
+            </div>
+            <div class="form__box">
+              <input
+                data-required="true"
+                data-number="true"
+                type="text"
+                class="form__field"
+                placeholder="Номер"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form__box">
+          <label class="form__box-label" for="">кем выдан</label>
+          <input
+            data-required="true"
+            type="text"
+            class="form__field"
+            placeholder="Кем выдан"
+          />
+        </div>
+        <div class="form__box">
+          <label class="form__box-label" for="">Когда выдан</label>
+          <input
+            data-required="true"
+            type="text"
+            class="form__field"
+            placeholder="Когда выдан"
+          />
+        </div>
+      </div>
+      <div class="form__buttons">
+        <input class="form__button" type="submit" value="Отправить" />
+        <input
+          class="form__button"
+          type="reset"
+          value="Сбросить"
+          placeholder="Номер"
+        />
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
