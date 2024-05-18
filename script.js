@@ -1,5 +1,6 @@
 "use strict";
 
+//Функция валидации
 function validation(form) {
   function removeError(input) {
     const parent = input.parentNode;
@@ -71,6 +72,7 @@ function validation(form) {
   return result;
 }
 
+//Условия валидации
 document
   .getElementById("add-form")
   .addEventListener("submit", function (event) {

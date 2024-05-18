@@ -8,7 +8,9 @@
   </head>
   <body>
     <form class="form" id="add-form" action="">
-      <div class="form__vehicle-info form__col">
+      <span class="form__exit-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="exit"><path fill="#231f20" d="m161.737 180.345 18.646-18.646L350.33 331.645l-18.646 18.646z"></path><path fill="#231f20" d="m161.674 331.655 169.947-169.947 18.646 18.647L180.32 350.3z"></path></svg></span>
+      <div class="form__vehicle-info form__row">
         <h1 class="form__main-title">Транспортные средства и водители</h1>
         <div class="form__box">
           <label class="form__box-label" for="">Гос-номер</label>
@@ -52,7 +54,7 @@
           />
         </div>
       </div>
-      <div class="form__driver-info form__col">
+      <div class="form__driver-info form__row">
         <h2 class="form__title">Данные о водителе</h2>
         <div class="form__box">
           <label class="form__box-label" for="">ФИО</label>
@@ -127,7 +129,6 @@
           class="form__button"
           type="reset"
           value="Отменить"
-          
           id="reset-button"
           name="reset-button"
         />
